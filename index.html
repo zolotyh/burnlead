@@ -22,20 +22,10 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-background="./img/quixote.png">
-          <h1 style="line-height: 0.7em; font-weight: 800">Борьба</h1>
-          <h3>с ветряными мельницамии</h3>
+        <section>
+          <h1 style="line-height: 0.7em; font-weight: 800">Технический долг.</h1>
+          <h3>Разбираемся кто, что и кому должен</h3>
           <br>
-        </section>
-        <section data-background="./img/quixote.png" data-transition="slide none">
-          <p>Как жить с техническим долгом</p>
-          <p style="opacity: 0;">Как жить с техническим долгом</p>
-        </section>
-        <section data-background="./img/quixote.png" data-transition="none slide">
-          <p>
-            <strike>Как жить с техническим долгом</strike>
-          </p>
-          <p>Как <b>я живу</b> с техническим долгом</p>
         </section>
         <section>
           <table>
@@ -172,30 +162,25 @@
         <section data-transition="fade-in slide-out" data-background-color="#030303">
           <h1>2. Где встречается</h1>
         </section>
-        <section>
-          <h2>
-            Чтобы не было технического долга и легаси нужно рефакторить
-          </h2>
-        </section>
         <section data-auto-animate>
           <aside class="notes">
             это попытка всеобъемлющей и подробной формализации некоторой области знаний с помощью концептуальной схемы
           </aside>
           <h3>Онтология технического долга</h3>
           <ul style="columns: 2;" >
-            <li>Architecture Debt</li>
-            <li>Build Debt</li>
-            <li>Code Debt</li>
-            <li>Defect Debt</li>
-            <li>Design Debt</li>
-            <li>Documentation Debt</li>
-            <li>Infrastructure Debt</li>
-            <li>People Debt</li>
-            <li>Process Debt</li>
-            <li>Requirement Debt</li>
-            <li>Service Debt</li>
-            <li>Test Automation Debt</li>
-            <li>Test Debt</li>
+            <li class="fragment">Architecture Debt</li>
+            <li class="fragment">Build Debt</li>
+            <li class="fragment">Code Debt</li>
+            <li class="fragment">Defect Debt</li>
+            <li class="fragment">Design Debt</li>
+            <li class="fragment">Documentation Debt</li>
+            <li class="fragment">Infrastructure Debt</li>
+            <li class="fragment">People Debt</li>
+            <li class="fragment">Process Debt</li>
+            <li class="fragment">Requirement Debt</li>
+            <li class="fragment">Service Debt</li>
+            <li class="fragment">Test Automation Debt</li>
+            <li class="fragment">Test Debt</li>
           </ul>
           <p>
             <a href="https://shorturl.at/kuFS3">https://shorturl.at/kuFS3</a>
@@ -227,7 +212,7 @@
           <h4>Как можно набрать техдолг на пустом месте</h4>
           <ul>
             <li class="fragment">Redux =&gt; MobX</li>
-            <li class="fragment">MomentJS =&gt; DayJS</li>
+            <li class="fragment">Hibernate =&gt; JOOQ</li>
             <li class="fragment">Старый подход =&gt; Новый подход</li>
           </ul>
         </section>
@@ -251,13 +236,6 @@
           <div style="margin-top: 4em; background: rgba(255,255,255, 0.9);">
             <p>&mdash; Сейчас у нас другие приоритеты, <br/>вернемся к этому разговору чуть позже</p> 
           </div>
-        </section>
-        <section>
-          <h2>Есть и такое мнение</h2>
-          <p>
-            <a href="https://shorturl.at/cgky5">shorturl.at/cgky5</a>
-          </p>
-          <img style="height: 10em;" src="img/td.png" alt="">
         </section>
         <section data-transition="fade-in slide-out" data-background-color="#2F2F2F">
           <h2>Известный или неизвестный</h2>
@@ -330,8 +308,8 @@
             <li class="fragment">Ищем</li>
             <li class="fragment">Оцениваем</li>
             <li class="fragment">Принимаем решение</li>
+            <li class="fragment">Планируем</li>
             <li class="fragment">Делаем</li>
-            <li class="fragment">Рефлексируем</li>
             <li class="fragment">Мониторим</li>
           </ol>
         </section>
@@ -341,11 +319,19 @@
           </h2>
           <ul>
             <li class="fragment">Спросить у команды <span class="fragment">(субъективно)</span></li>
-            <li class="fragment">Автоматический анализ</li>
           </ul>
         </section>
         <section>
-          Как нам поможет автоматизация
+            Спросить у команды &mdash; самый дешевый и простой способ
+        </section>
+        <section data-transition="fade-in slide-out" data-background-color="#2F2F2F">
+          <h2>
+            Поиск
+          </h2>
+          <ul>
+            <li>Спросить у команды (субъективно)</li>
+            <li class="fragment">Автоматический анализ</li>
+          </ul>
         </section>
         <section>
           <h2>ASA</h2>
@@ -457,25 +443,97 @@ $ npx code-complexity . --sort=score --limit=3
 └──────────────────────────────┴────────────┴───────┴───────┘
           </code></pre>
         </section>
-        <section>
+        <section data-transition="fade-in slide-out" data-background-color="#2F2F2F">
           <h2>
-            @deprecated
+            Поиск
           </h2>
+          <ul>
+            <li>Спросить у команды (субъективно)</li>
+            <li>Автоматический анализ</li>
+            <li class="fragment">Чеклисты и баллы</li>
+          </ul>
         </section>
         <section>
-          <pre><code data-line-numbers="1-8|2|1-8" data-trim data-noescape>
-/**
- * @deprecated Please use {@link NonDeprecatedComponent}
- */
-export const DeprecatedComponent = () =&gt; {
-   const callback = useCallback(() =&gt; {}, []);
-   return &lt;div onClick={callback}&gt;&lt;/div&gt;;
-}
-
-          </code></pre>
+          Удобно считать и мониторить
         </section>
         <section>
-          <img src="img/idea2.png" alt="Idea screenshot">
+          <img src="img/td_checklist.png" alt="Таблица с чеклистами">
+        </section>
+        <section>
+          <img src="img/point.png" alt="график снижения баллов по техдолгу">
+        </section>
+        <section>
+          <aside class="notes">
+            <p>Нужно или не нужно</p>
+            <p>Если нужно то какой приоритет</p>
+          </aside>
+          <p>План</p>
+          <ol>
+            <li>Ищем</li>
+            <li class="fragment">Оцениваем</li>
+            <li class="fragment">Принимаем решение</li>
+          </ol>
+        </section>
+        <section>
+          <h2>Есть и такое мнение</h2>
+          <p>
+            <a href="https://shorturl.at/cgky5">shorturl.at/cgky5</a>
+          </p>
+          <img style="height: 10em;" src="img/td.png" alt="">
+        </section>
+        <section>
+          <aside class="notes">
+            <p>План как будем делать</p>
+            <p>Как тестировать</p>
+            <p>Как оценивать результаты</p>
+          </aside>
+          <p>План</p>
+          <ol>
+            <li >Ищем</li>
+            <li >Оцениваем</li>
+            <li >Принимаем решение</li>
+            <li class="fragment">Планируем</li>
+          </ol>
+        </section>
+        <section data-transition="fade-in slide-out" data-background-color="#030303">
+          <aside class="notes">
+            <p>Само решение</p>
+            <p>Что сделать сначала, что делать после</p>
+            <p>Что за чем делать</p>
+          </aside>
+          <ul>
+            <li>Как?</li>
+            <li>Когда?</li>
+          </ul>
+        </section>
+        <section>
+          <h2>RFC</h2>
+          <a href="https://fuchsia.dev/fuchsia-src/contribute/governance/rfcs">fuchsia.dev/fuchsia-src/contribute/governance/rfcs</a>
+        </section>
+        <section>
+          <p>RFC</p>
+          <ul>
+            <li class="fragment">Синопсис</li>
+            <li class="fragment">Мотивация</li>
+            <li class="fragment">Стейкхолдеры <span class="fragment">(ревьюверы, консультанты)</span></li>
+            <li class="fragment">Требования</li>
+            <li class="fragment">Дизайн</li>
+            <li class="fragment">Имплементация</li>
+            <li class="fragment">Тестирование</li>
+            <li class="fragment">Документация</li>
+            <li class="fragment">Недостаки решения, альтернативы, неизвестные</li>
+          </ul>
+        </section>
+        <section>
+          <p>План</p>
+          <ol>
+            <li>Ищем</li>
+            <li>Оцениваем</li>
+            <li>Принимаем решение</li>
+            <li>Планируем</li>
+            <li class="fragment">Делаем</li>
+            <li class="fragment">Мониторим</li>
+          </ol>
         </section>
         <section>
           <h2>Semgrep</h2>
@@ -494,62 +552,12 @@ rules:
       severity: WARNING
           </code></pre>
         </section>
+
         <section>
           <h2>Grafana + Clickhouse</h2>
           <img src="img/angular.png" alt="">
         </section>
-        <section>
-          <aside class="notes">
-            <p>Нужно или не нужно</p>
-            <p>Если нужно то какой приоритет</p>
-          </aside>
-          <p>План</p>
-          <ol>
-            <li>Ищем</li>
-            <li>Оцениваем</li>
-            <li class="fragment">Принимаем решение</li>
-          </ol>
-        </section>
-        <section>
-          <h2>Как принимать решения</h2>
-          <p class="fragment">Упавление рисками</p>
-          <ul>
-            <li class="fragment">80/20</li>
-            <li class="fragment">Квадрат Декарта</li>
-            <li class="fragment">SWOT Анализ</li>
-          </ul>
-        </section>
-        <section>
-          <aside class="notes">
-            <p>План как будем делать</p>
-            <p>Как тестировать</p>
-            <p>Как оценивать результаты</p>
-          </aside>
-          <p>План</p>
-          <ol>
-            <li >Ищем</li>
-            <li >Оцениваем</li>
-            <li >Принимаем решение</li>
-            <li class="fragment"><mark>Планируем</mark></li>
-          </ol>
-        </section>
-        <section data-transition="fade-in slide-out" data-background-color="#030303">
-          <p>
-            Планируем (Big Design Up Front)
-          </p>
-        </section>
-        <section>
-          <p>План</p>
-          <ol>
-            <li>Ищем</li>
-            <li>Оцениваем</li>
-            <li>Принимаем решение</li>
-            <li>Планируем</li>
-            <li class="fragment">Делаем</li>
-            <li class="fragment">Рефлексируем</li>
-            <li class="fragment">Мониторим</li>
-          </ol>
-        </section>
+
         <section data-transition="fade-in slide-out" data-background-color="#030303">
           <h1>5. Полезняшки</h1>
         </section>
@@ -622,13 +630,6 @@ Fresh/Fading knowledge
           </code></pre>
         </section>
         <section>
-          <p>
-            Работаем с JSON
-          </p>
-          <p><a href="https://github.com/discoveryjs">github.com/discoveryjs</a></p>
-          <img src="img/discovery.png" alt="">
-        </section>
-        <section>
          <p>Другие тулы для структурного поиска</p>
           <ul>
             <li><a href="https://codeql.github.com/">codeql.github.com</a></li>
@@ -636,10 +637,24 @@ Fresh/Fading knowledge
           </ul>
         </section>
         <section>
-          <p>
-            Zoomable Treemap
-          </p>
-          <iframe width="100%" style="min-height: 12em" src="https://mbostock.github.io/d3/talk/20111018/treemap.html" frameborder="0"></iframe>
+          <h2>
+            @deprecated
+          </h2>
+        </section>
+        <section>
+          <pre><code data-line-numbers="1-8|2|1-8" data-trim data-noescape>
+/**
+ * @deprecated Please use {@link NonDeprecatedComponent}
+ */
+export const DeprecatedComponent = () =&gt; {
+   const callback = useCallback(() =&gt; {}, []);
+   return &lt;div onClick={callback}&gt;&lt;/div&gt;;
+}
+
+          </code></pre>
+        </section>
+        <section>
+          <img src="img/idea2.png" alt="Idea screenshot">
         </section>
         <section>
           <h2>Выводы</h2>
